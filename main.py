@@ -17,7 +17,7 @@ async def run():
         page = await browser.new_page()
         await page.goto("https://www.flipkart.com/cmf-nothing-phone-2-pro-black-128-gb/p/itm46a119f176627?pid=MOBHAUHA5GRW9FS2")
 
-        element = await page.query_selector(
+        element = await page.wait_for_selector(
             '//*[@id="container"]/div/div[3]/div[1]/div[2]/div[2]/div/div[4]/div[1]/div/div[1]'
         )
         price = int((await element.inner_text()).replace("₹", "").replace(",", ""))
