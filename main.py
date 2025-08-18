@@ -23,7 +23,7 @@ async def run():
         price = int((await element.inner_text()).replace("₹", "").replace(",", ""))
         print("Price:", price)
 
-        if price < 18999:
+        if price < 19999:
             send_telegram_message(f"📢 Price Drop Alert!\nCMF Phone 2 Pro is now ₹{price}")
 
         await browser.close()
