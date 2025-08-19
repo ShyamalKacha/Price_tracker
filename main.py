@@ -13,9 +13,9 @@ def send_telegram_message(message: str):
     payload = {"chat_id": CHAT_ID, "text": message}
     try:
         requests.post(url, data=payload)
-        print("Notification sent!")
+        # print("Notification sent!")
     except Exception as e:
-        print("Failed to send Telegram message:", e)
+        # print("Failed to send Telegram message:", e)
 
 async def run():
     async with async_playwright() as p:
@@ -26,7 +26,7 @@ async def run():
         # Extract price
         element = await page.query_selector('div.Nx9bqj.CxhGGd')
         price = int((await element.inner_text()).replace("₹", "").replace(",", ""))
-        print("Price:", price)
+        # print("Price:", price)
 
         # Condition for alert
         if price < 19999:
