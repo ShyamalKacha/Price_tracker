@@ -34,7 +34,7 @@ async def run():
         price = int(price_text.replace("₹", "").replace(",", ""))
         # print("Price:", price)  
 
-        if price < 19999:
+        if price < 18999:
             send_telegram_message(f"📢 Price Drop Alert!\nCMF Phone 2 Pro is now ₹{price}")
         
         # target_url="https://ipinfo.io/json"
