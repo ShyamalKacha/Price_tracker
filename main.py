@@ -19,7 +19,7 @@ async def run():
     scraper_url = f"http://api.scraperapi.com?api_key={SCRAPERAPI_KEY}&country_code=in&url={target_url}"
 
     async with async_playwright() as p:
-        browser = await p.chromium.launch(headless=False)
+        browser = await p.chromium.launch(headless=True)
         page = await browser.new_page(
             viewport={"width": 1280, "height": 800},
             user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
